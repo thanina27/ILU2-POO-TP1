@@ -14,6 +14,29 @@ public class Village {
 		villageois = new Gaulois[nbVillageoisMaximum];
 	}
 
+	
+	//creation de la classe interne marche (dans la classe Village en utilisant le mots cle static)
+	
+	public static class Marche{
+		private Etal [] etals ;
+		
+		public Marche (int nbEtalsMarche) {
+			this.etals = new Etal [nbEtalsMarche];
+			for (int i=0; i<nbEtalsMarche; i++) {
+				this.etals[i]= new Etal();
+			}
+		}
+		
+		
+		 public void utiliserEtal(int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+			 
+			 this.etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
+			 
+			}
+		 }
+	}
+	
+	
 	public String getNom() {
 		return nom;
 	}
